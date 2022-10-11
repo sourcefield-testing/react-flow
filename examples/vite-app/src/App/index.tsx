@@ -20,6 +20,7 @@ import MultiFlows from '../examples/MultiFlows';
 import NestedNodes from '../examples/NestedNodes';
 import NodeTypeChange from '../examples/NodeTypeChange';
 import NodeTypesObjectChange from '../examples/NodeTypesObjectChange';
+import NodeAsHandle from '../examples/NodeAsHandle';
 import Overview from '../examples/Overview';
 import Provider from '../examples/Provider';
 import SaveRestore from '../examples/SaveRestore';
@@ -139,6 +140,11 @@ const routes: IRoute[] = [
     name: 'Nested Nodes',
     path: '/nested-nodes',
     component: NestedNodes,
+  },
+  {
+    name: 'Node As Handle',
+    path: '/node-handle',
+    component: NodeAsHandle,
   },
   {
     name: 'Node Type Change',
