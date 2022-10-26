@@ -284,7 +284,7 @@ jobs:
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
-          --backend_url="$GRAPHQL_ENDPOINT"
+          --backend_url="https://cartographr-api.sourcefield.io/dev-hwkns-plumbr/graphql"
 
   processMapsTypeScript:
     name: Process and Diff Maps (TypeScript and JavaScript)
@@ -344,7 +344,7 @@ jobs:
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
-          --backend_url="$GRAPHQL_ENDPOINT"
+          --backend_url="https://cartographr-api.sourcefield.io/dev-hwkns-plumbr/graphql"
 
   processMapsJava:
     name: Process and Diff Maps (Java)
@@ -404,7 +404,7 @@ jobs:
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
-          --backend_url="$GRAPHQL_ENDPOINT"
+          --backend_url="https://cartographr-api.sourcefield.io/dev-hwkns-plumbr/graphql"
 
   processMapsGo:
     name: Process and Diff Maps (Go)
@@ -464,4 +464,4 @@ jobs:
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
-          --backend_url="$GRAPHQL_ENDPOINT"
+          --backend_url="https://cartographr-api.sourcefield.io/dev-hwkns-plumbr/graphql"
