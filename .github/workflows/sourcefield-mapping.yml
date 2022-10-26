@@ -194,7 +194,7 @@ jobs:
     name: Parse Go Maps
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/sourcefield-lsif-go:a0ec28f"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/sourcefield-lsif-go:9a3d4b0"
     needs:
       - fetchLanguages
       - getMergeBase
@@ -230,7 +230,7 @@ jobs:
     name: Process and Diff Maps (Python)
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:b7fa3eb"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:a0be134"
     needs:
       - fetchLanguages
       - getMergeBase
@@ -281,6 +281,9 @@ jobs:
         run: |
           cd /sourcefield
           python3 -m processor.mapdiff.commands - diff_maps_and_report_metrics \
+          --repo_owner="${{ github.event.pull_request.base.repo.owner.login }}" \
+          --repo_name="${{ github.event.pull_request.base.repo.name }}" \
+          --pr_number=${{ github.event.pull_request.number }} \
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
@@ -290,7 +293,7 @@ jobs:
     name: Process and Diff Maps (TypeScript and JavaScript)
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:b7fa3eb"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:a0be134"
     needs:
       - fetchLanguages
       - getMergeBase
@@ -341,6 +344,9 @@ jobs:
         run: |
           cd /sourcefield
           python3 -m processor.mapdiff.commands - diff_maps_and_report_metrics \
+          --repo_owner="${{ github.event.pull_request.base.repo.owner.login }}" \
+          --repo_name="${{ github.event.pull_request.base.repo.name }}" \
+          --pr_number=${{ github.event.pull_request.number }} \
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
@@ -350,7 +356,7 @@ jobs:
     name: Process and Diff Maps (Java)
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:b7fa3eb"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:a0be134"
     needs:
       - fetchLanguages
       - getMergeBase
@@ -401,6 +407,9 @@ jobs:
         run: |
           cd /sourcefield
           python3 -m processor.mapdiff.commands - diff_maps_and_report_metrics \
+          --repo_owner="${{ github.event.pull_request.base.repo.owner.login }}" \
+          --repo_name="${{ github.event.pull_request.base.repo.name }}" \
+          --pr_number=${{ github.event.pull_request.number }} \
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
@@ -410,7 +419,7 @@ jobs:
     name: Process and Diff Maps (Go)
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:b7fa3eb"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/parse-processor/lsif-processor:a0be134"
     needs:
       - fetchLanguages
       - getMergeBase
@@ -461,6 +470,9 @@ jobs:
         run: |
           cd /sourcefield
           python3 -m processor.mapdiff.commands - diff_maps_and_report_metrics \
+          --repo_owner="${{ github.event.pull_request.base.repo.owner.login }}" \
+          --repo_name="${{ github.event.pull_request.base.repo.name }}" \
+          --pr_number=${{ github.event.pull_request.number }} \
           --map1=/sourcefield/base.pickle \
           --map2=/sourcefield/head.pickle \
           --diff=/sourcefield/diff.txt \
