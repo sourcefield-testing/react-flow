@@ -116,7 +116,7 @@ jobs:
     name: Parse TypeScript and JavaScript Maps
     runs-on: ubuntu-latest
     container:
-      image: "us-docker.pkg.dev/plumbr/sourcefield-public/sourcefield-lsif-typescript:e9245ff"
+      image: "us-docker.pkg.dev/plumbr/sourcefield-public/sourcefield-lsif-typescript:d8ea8cb"
     needs:
       - fetchLanguages
       - getMergeBase
