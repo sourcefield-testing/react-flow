@@ -91,6 +91,8 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
       onSelectionDrag,
       onSelectionDragStop,
       onSelectionContextMenu,
+      onSelectionStart,
+      onSelectionEnd,
       connectionMode = ConnectionMode.Strict,
       connectionLineType = ConnectionLineType.Bezier,
       connectionLineStyle,
@@ -98,6 +100,8 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
       connectionLineContainerStyle,
       deleteKeyCode = 'Backspace',
       selectionKeyCode = 'Shift',
+      selectBoxOnDrag = false,
+      selectBoxMode = 'Contained',
       multiSelectionKeyCode = 'Meta',
       zoomActivationKeyCode = 'Meta',
       snapToGrid = false,
@@ -192,6 +196,8 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
             connectionLineComponent={connectionLineComponent}
             connectionLineContainerStyle={connectionLineContainerStyle}
             selectionKeyCode={selectionKeyCode}
+            selectBoxOnDrag={selectBoxOnDrag}
+            selectBoxMode={selectBoxMode}
             deleteKeyCode={deleteKeyCode}
             multiSelectionKeyCode={multiSelectionKeyCode}
             zoomActivationKeyCode={zoomActivationKeyCode}
@@ -216,6 +222,8 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
             onPaneScroll={onPaneScroll}
             onPaneContextMenu={onPaneContextMenu}
             onSelectionContextMenu={onSelectionContextMenu}
+            onSelectionStart={onSelectionStart}
+            onSelectionEnd={onSelectionEnd}
             onEdgeUpdate={onEdgeUpdate}
             onEdgeContextMenu={onEdgeContextMenu}
             onEdgeDoubleClick={onEdgeDoubleClick}
